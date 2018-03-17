@@ -6,12 +6,44 @@ import java.util.Scanner;
 /**
  * A simple console-based maths quiz for primary school children.
  *
- * @author Author1
- * @author Author2
+ * @author jjl019
+ * @author ogboo3
  */
+
+public class Question {
+    private int value1;
+    private int value2;
+    //   private String operator;
+
+
+    public Question(int v1, int v2, String op) {
+        value1 = v1;
+        value2 = v2;
+        operator = op;
+    }
+
+    public void showQuestion() {
+        System.out.printf("What is %d + %d?\n", value1, value2);
+    }
+
+    public boolean checkAnswer(int response) {
+        // TODO: check responce against value1+value2...
+        return false;
+    }
+}
+
+
 public class Main {
 
     public static void main(String[] args) {
+
+    Question q =new Question(a,b,"+");
+    q.showQuestion();
+    int response = input.nextint();
+    q.checkAnswer(response);
+
+
+        /**
         Random rand = new Random();
         Scanner input = new Scanner(System.in);
 
@@ -27,6 +59,8 @@ public class Main {
             } else {
                 System.out.printf("  No, the answer is %d.\n", correct);
             }
-        }
+        } **/
     }
 }
+
+
