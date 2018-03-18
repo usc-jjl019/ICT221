@@ -48,7 +48,9 @@ public class Main {
         for (int i = 0; i < 10; ++i) {
             Question question1 = new Question();
             question1.showQuestion();
-            int response = input.netInt();
+            int response = input.nextInt();
+            question1.findAnswer();
+            question1.showAnswer(response);
             if (response == question1.answer) {
                 ++counter;
                 System.out.println(count + " " + "is your score" + (++i));
@@ -57,21 +59,6 @@ public class Main {
 
     }
 }
-
-public class Question {
-    int answer;
-
-    Random rand = new Random();
-}
-
-
-
-
-
-
-
-
-
 
 /**
 }
