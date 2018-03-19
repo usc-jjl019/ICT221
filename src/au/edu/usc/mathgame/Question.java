@@ -14,14 +14,14 @@ public class Question {
 
     public Question() {
 
-        if (0 == 1) {
-            operator = "+" + " ";
+        if (o == 1) {
+            operator = " " + "+" + " ";
         } else if (o == 2) {
-            operator = "-" + " ";
+            operator = " " + "-" + " ";
         } else if (o == 3) {
-            operator = "X" + " ";
+            operator = " " + "X" + " ";
         } else if (o == 4) {
-            operator = "/" + " ";
+            operator = " "+ "/" + " ";
 
         }
     }
