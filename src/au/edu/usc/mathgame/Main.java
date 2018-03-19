@@ -51,6 +51,7 @@ public class Main {
             question1.showQuestion();
             int response = input.nextInt();
             question1.findAnswer();
+            question1.checkAnswer(response);
             question1.showAnswer(response);
             if (response == question1.answer) {
                 ++count;
