@@ -57,7 +57,7 @@ public class Question {
         }
         System.out.println("");
     }
-/**    public boolean checkAnswer(int i) {
+    public boolean checkAnswer(int i) {
         return false;
-    } **/
+    }
 }
