@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class QuestionTest {
 
-    Question q = new Question(3, 4, 1);
+    MathQuestion q = new MathQuestion(3, 4, 1);
 
     @Test
     void test1() {

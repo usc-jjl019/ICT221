@@ -1,6 +1,7 @@
 package au.edu.usc.mathgame;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -49,19 +50,20 @@ public class Main {
         int count = 0;
         Scanner input = new Scanner(System.in);
         ArrayList<Question> questions = new ArrayList<>();
-        for (int i = 0; i < 10; ++i) {
-            questions.add(new Question());
+        for (int i = 0; i < 9; ++i) {
+            questions.add(new MathQuestion());
         }
+        questions.add(new JokeQuestion());
+        Collections.shuffle(questions);
         for (int i = 0; i < questions.size(); ++i) {
             questions.get(i).showQuestion();
             int response = input.nextInt();
             questions.get(i).showAnswer(response);
             if (questions.get(i).checkAnswer(response)) {
-                if (questions.get(i).canScore) {
+                if (questions.get(i).getCanScore()) {
                     count++;
                 }
             } else {
-                questions.get(i).canScore = false;
                 i--;
             }
 
