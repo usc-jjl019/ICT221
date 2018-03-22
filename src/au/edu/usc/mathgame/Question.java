@@ -14,16 +14,7 @@ public class Question {
 
     public Question() {
 
-        if (o == 1) {
-            operator = " " + "+" + " ";
-        } else if (o == 2) {
-            operator = " " + "-" + " ";
-        } else if (o == 3) {
-            operator = " " + "X" + " ";
-        } else if (o == 4) {
-            operator = " "+ "/" + " ";
-
-        }
+        setOperator();
 
         findAnswer();
     }
@@ -32,6 +23,21 @@ public class Question {
         this.v1 = v1;
         this.v2 = v2;
         this.o = o;
+        setOperator();
+        findAnswer();
+    }
+
+    private void setOperator() {
+
+        if (o == 1) {
+            operator = " " + "+" + " ";
+        } else if (o == 2) {
+            operator = " " + "-" + " ";
+        } else if (o == 3) {
+            operator = " " + "X" + " ";
+        } else if (o == 4) {
+            operator = " "+ "/" + " ";
+        }
     }
 
     private void findAnswer() {
@@ -48,9 +54,10 @@ public class Question {
     }
 
     /** Makes question with v1 and v2 using random operator for values **/
-    public void showQuestion() {
-        System.out.println("What is " + v1 + operator + v2 + "?");
-
+    public String showQuestion() {
+        String question = "What is " + v1 + operator + v2 + "?";
+        System.out.println(question);
+        return question;
     }
 
     /** checks answer */
