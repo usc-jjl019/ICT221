@@ -1,6 +1,6 @@
 package au.edu.usc.mathgame;
 
-import java.util.Random;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -53,16 +53,25 @@ public class Main {
     public int game() {
         int count = 0;
         Scanner input = new Scanner(System.in);
+        ArrayList<Question> questions = new ArrayList<>();
         for (int i = 0; i < 10; ++i) {
-            Question question1 = new Question();
-            question1.showQuestion();
+            questions.add(new Question());
+        }
+        for (int i = 0; i < questions.size(); ++i) {
+            questions.get(i).showQuestion();
             int response = input.nextInt();
-            question1.showAnswer(response);
-            if (question1.checkAnswer(response)) {
-                count++;
+            questions.get(i).showAnswer(response);
+            if (questions.get(i).checkAnswer(response)) {
+                if (questions.get(i).canScore) {
+                    count++;
+                }
+            } else {
+                questions.get(i).canScore = false;
+                i--;
             }
 
         }
+
         if (count >= 0 && count <= 5) {
             System.out.println("Good start, you can do better");
         } else if (count > 5 && count <=7) {

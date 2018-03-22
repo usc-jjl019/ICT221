@@ -11,6 +11,7 @@ public class Question {
     private int v2 = rand.nextInt(13 - 0) + 1;
     private int o = rand.nextInt(4 - 0) + 1;
     private String operator;
+    public boolean canScore = true;
 
     public Question() {
 
@@ -62,11 +63,11 @@ public class Question {
 
     /** checks answer */
     public void showAnswer(int input) {
-        System.out.println("Answer is " + answer);
+        //System.out.println("Answer is " + answer);
         if (input == answer) {
             System.out.println("Correct!");
         } else {
-            System.out.println("Wrong answer.");
+            System.out.println("Wrong answer, try again");
         }
         System.out.println("");
     }
