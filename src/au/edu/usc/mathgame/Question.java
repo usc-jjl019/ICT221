@@ -24,11 +24,17 @@ public class Question {
             operator = " "+ "/" + " ";
 
         }
+
+        findAnswer();
     }
     /** checks answer **/
-    public Question(int i, int i1, String s) {}
+    public Question(int v1, int v2, int o) {
+        this.v1 = v1;
+        this.v2 = v2;
+        this.o = o;
+    }
 
-    public void findAnswer() {
+    private void findAnswer() {
 
         if (o == 1) {
             answer = v1 + v2;
@@ -58,6 +64,8 @@ public class Question {
         System.out.println("");
     }
     public boolean checkAnswer(int i) {
-        return false;
+
+        return (i == answer);
+
     }
 }

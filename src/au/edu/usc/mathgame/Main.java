@@ -13,51 +13,65 @@ import java.util.Scanner;
 /** Class  Main, it's method is gameNumberQuestion used to prompt for how many games the user desires **/
 
 
+
+/** Instantiate Main and HighScore**/
+
+
 public class Main {
+
+    private HighScore highScore;
+
     public static void main(String[] args) {
         Main main = new Main();
         main.gameNumberQuestion();
     }
-
     /**
      * This is a for loop that runs depending on the input number the user has chosen
      **/
 
     public void gameNumberQuestion() {
-        System.out.println("10 questions per game, how many rounds would you like to play? ");
+        highScore = new HighScore();
+        System.out.println("10 questions per game, how many games would you like to play? ");
         Scanner input = new Scanner(System.in);
-        int rounds = input.nextInt();
-        int roundsCount;
-        roundsCount = rounds * 10;
-        for (int i = 0; i < rounds; ++i) {
-            roundsCount = rounds;
-            System.out.println("You have elected to play" + " " + roundsCount + " " + "rounds");
-            game();
+        int games = input.nextInt();
+        System.out.println("You have elected to play " + (games * 10) + " rounds of questions");
+        int count = 0;
+        for (int i = 1; i <= games; ++i) {
+            int gameCount = game();
+            count += gameCount;
+            System.out.println("Your score is " + count + " " + "out of " + (i * 10));
 
+            highScore.checkScore(gameCount);
+            System.out.println(highScore.listHighScore());
         }
     }
-
-    int rounds;
 
     /**
      * This starts the game using the parameters set from gameNumberQuestion
      **/
 
-    public void game() {
+    public int game() {
         int count = 0;
         Scanner input = new Scanner(System.in);
         for (int i = 0; i < 10; ++i) {
             Question question1 = new Question();
             question1.showQuestion();
             int response = input.nextInt();
-            question1.findAnswer();
-            question1.checkAnswer(response);
             question1.showAnswer(response);
-            if (response == question1.answer) {
-                ++count;
-                System.out.println("Your score is" + " " + count + " " + "out of" + " " + (i+1));
+            if (question1.checkAnswer(response)) {
+                count++;
             }
+
+        }
+        if (count >= 0 && count <= 5) {
+            System.out.println("Good start, you can do better");
+        } else if (count > 5 && count <=7) {
+            System.out.println("Great work!, maybe you might do better if you try again");
+        } else if (count > 7) {
+            System.out.println("Fantastic!, you did splendid");
         }
 
+
+        return count;
     }
 }
