@@ -10,12 +10,7 @@ import java.util.Scanner;
  * @author ogboo3
  */
 
-/** Class  Main, it's method is gameNumberQuestion used to prompt for how many games the user desires **/
-
-
-
-/** Instantiate Main and HighScore**/
-
+/** Class  Main, this is the main loop the handles the program at runtime **/
 
 public class Main {
 
@@ -26,7 +21,7 @@ public class Main {
         main.gameNumberQuestion();
     }
     /**
-     * This is a for loop that runs depending on the input number the user has chosen
+     * Handles initiation of each game
      **/
 
     public void gameNumberQuestion() {
@@ -46,10 +41,10 @@ public class Main {
         }
     }
 
-    /**
-     * This starts the game using the parameters set from gameNumberQuestion
-     **/
-
+    /** This handles each round
+     *
+     * @return The end score for this game session
+     */
     public int game() {
         int count = 0;
         Scanner input = new Scanner(System.in);

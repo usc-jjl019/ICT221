@@ -6,6 +6,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/** The Class QuestionTest is a unit tester
+ * @author jjl019
+ * @author ogboo3
+ * **/
+
 public class QuestionTest {
 
     Question q = new Question(3, 4, 1);

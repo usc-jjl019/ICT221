@@ -2,8 +2,15 @@ package au.edu.usc.mathgame;
 
 import java.util.Random;
 
+/** Class Question, stores information about each question
+ * @author jjl019
+ * @author ogboo3
+ */
+
+
+
 public class Question {
-    /** calculates Random Int from Random library **/
+
     int answer;
     Random rand = new Random();
 
@@ -19,7 +26,12 @@ public class Question {
 
         findAnswer();
     }
-    /** checks answer **/
+    /** Unit testing constructor
+     * @param v1 the first value in the equation
+     * @param v2 the second value in the equation
+     * @param o the math operator in the equation
+     * **/
+
     public Question(int v1, int v2, int o) {
         this.v1 = v1;
         this.v2 = v2;
@@ -28,6 +40,7 @@ public class Question {
         findAnswer();
     }
 
+    /** Sets the textual representation of the operator **/
     private void setOperator() {
 
         if (o == 1) {
@@ -40,7 +53,7 @@ public class Question {
             operator = " "+ "/" + " ";
         }
     }
-
+    /** Calculates the answer and stores it for later use **/
     private void findAnswer() {
 
         if (o == 1) {
@@ -54,23 +67,31 @@ public class Question {
         }
     }
 
-    /** Makes question with v1 and v2 using random operator for values **/
+    /** Outputs question
+     * @return question string for unit testing **/
     public String showQuestion() {
         String question = "What is " + v1 + operator + v2 + "?";
         System.out.println(question);
         return question;
     }
 
-    /** checks answer */
+    /** Outputs result of input
+     * @param input The users answer **/
     public void showAnswer(int input) {
         //System.out.println("Answer is " + answer);
-        if (input == answer) {
+        if (checkAnswer(input)) {
             System.out.println("Correct!");
         } else {
             System.out.println("Wrong answer, try again");
         }
         System.out.println("");
     }
+
+    /** Checks if i is equal to answer
+     *
+     * @param i The int to check against
+     * @return true if i matches answer
+     */
     public boolean checkAnswer(int i) {
 
         return (i == answer);
