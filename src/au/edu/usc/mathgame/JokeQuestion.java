@@ -1,6 +1,6 @@
 package au.edu.usc.mathgame;
 
-/** Class JokeQuestion, This a
+/** Class JokeQuestion, This implements to the Question Interface
  * @author jjl019
  * @author ogboo3
  */

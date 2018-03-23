@@ -100,8 +100,12 @@ public class MathQuestion implements Question {
      */
     @Override
     public boolean checkAnswer(int i) {
-
-        return (i == answer);
+        if (i == answer){
+            return true;
+        }else {
+            this.canScore = false;
+            return false;
+        }
 
     }
 

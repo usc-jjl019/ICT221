@@ -33,6 +33,7 @@ public class Main {
         System.out.println("You have elected to play " + (games * 10) + " rounds of questions");
         int count = 0;
         for (int i = 1; i <= games; ++i) {
+            System.out.println(i);
             int gameCount = game();
             count += gameCount;
             System.out.println("Your score is " + count + " " + "out of " + (i * 10));
